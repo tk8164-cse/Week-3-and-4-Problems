@@ -1,0 +1,22 @@
+import java.util.Scanner;
+public class EmployeeBonus {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter your monthly salary: ");
+        double salary = scanner.nextDouble();
+        System.out.print("Enter your years of service: ");
+        int yearsOfService = scanner.nextInt();
+        if (yearsOfService > 5) {
+            double bonusPercentage = 0.05;
+            double bonusAmount = salary * bonusPercentage;
+            System.out.println("Congratulations! You are eligible for a 5% bonus.");
+            System.out.println("Your bonus amount is: " + bonusAmount);
+            System.out.println("Your total salary with bonus is: " + (salary + bonusAmount));
+        } 
+		else {
+            System.out.println("No bonus is awarded. You need more than 5 years of service.");
+            System.out.println("Years remaining for eligibility: " + (6 - yearsOfService));
+        }
+        scanner.close();
+    }
+}
